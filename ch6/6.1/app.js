@@ -7,7 +7,7 @@ app.set('port',process.env.PORT || 3000);
 
 app.use((req,res,next) => {
     console.log('모든 요청에 실행하고 싶어요');
-    ㅜnext();
+    next();
 });
 
 app.get('/',(req,res) => {
@@ -24,6 +24,14 @@ app.get('/about',(req,res) => {
 
 app.get('/jiwan',(req,res) => {
     res.send('hello jiwan');
+});
+
+app.get('/category/java',(req,res) => {
+    res.send('hello OK JAva');
+});
+
+app.get('/category/:name',(req,res) => {
+    res.send(`hello ${req.params.name}`);
 });
 
 app.listen(app.get('port'), () => {
