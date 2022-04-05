@@ -28,6 +28,10 @@ app.get('/jiwan',(req,res) => {
     res.send('hello jiwan');
 });
 
+app.get('/jiwang',(req,res) => {
+    res.send('hello jiwan');
+});
+
 app.get('/category/java',(req,res) => {
     res.send('hello OK JAva');
 });
