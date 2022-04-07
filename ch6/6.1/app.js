@@ -42,7 +42,7 @@ app.get('/category/:name',(req,res) => {
 
 app.use((err,req,res,next) => {
     console.error(err);
-    res.send('에러가 났습니다요. ')
+    res.send('에러가 났습니다. ')
 });
 
 app.listen(app.get('port'), () => {
