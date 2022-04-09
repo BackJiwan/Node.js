@@ -22,6 +22,10 @@ app.get('/about',(req,res) => {
     res.send('hello express');
 });
 
+app.get('/ab',(req,res) => {
+    res.send('hello express');
+});
+
 app.get('/jiwan',(req,res) => {
     res.send('hello jiwan');
 });
