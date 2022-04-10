@@ -8,6 +8,13 @@ app.set('port',process.env.PORT || 3000);
 app.use((req,res,next) => {
     console.log('모든 요청에 실행하고 싶어요');
     next();
+}, (req,res,next) => {
+    try{
+        // console.log('에러다');
+        console.log(eijowdijf)
+    } catch(error){
+        next(error);
+    }
 });
 
 app.get('/',(req,res) => {
