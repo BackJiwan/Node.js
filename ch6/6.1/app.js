@@ -48,9 +48,6 @@ app.get('/jiwang',(req,res) => {
     res.send('hello jiwan');
 });
 
-app.get('/j',(req,res) => {
-    res.send('hello jiwan');
-});
 
 app.get('/jiw',(req,res) => {
     res.send('hello jiwan');
