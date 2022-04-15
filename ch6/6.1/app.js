@@ -11,6 +11,8 @@ app.use(morgan('combined'));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extented: true}));
+app.use(express.static());
+
 
 // app.use((req,res,next) => {
 //     console.log('모든 요청에 실행하고 싶어요');
