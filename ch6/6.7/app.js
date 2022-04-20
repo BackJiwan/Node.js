@@ -2,11 +2,12 @@ const express = require('express');
 
 const app = express();
 
+app.set('port',3000); //port 이름에 속성 3000부여
 app.get('/' , (req,res) => {
     res.send('hello express');
 }); //라우터 설정
 
-app.listen(3000, () => {
+app.listen(app.get('port'), () => {
     console.log('익스프레스 서버가 실행됩니다. ');
 });
 
