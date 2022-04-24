@@ -12,9 +12,6 @@ app.get('/about', (req,res) => {
     res.send('hello express about');
 })
 
-app.get('/a', (req,res) => {
-    res.send('hello express about');
-})
 
 
 
