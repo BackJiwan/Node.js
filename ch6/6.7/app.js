@@ -16,9 +16,6 @@ app.get('/a', (req,res) => {
     res.send('hello express about');
 })
 
-app.get('/abo', (req,res) => {
-    res.send('hello express about');
-})
 
 
 app.listen(app.get('port'), () => {
