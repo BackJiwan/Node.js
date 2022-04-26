@@ -12,10 +12,6 @@ app.get('/about', (req,res) => {
     res.send('hello express about');
 })
 
-app.get('/aout', (req,res) => {
-    res.send('hello express about');
-})
-
 
 app.listen(app.get('port'), () => {
     console.log('익스프레스 서버가 실행됩니다. ');
