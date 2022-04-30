@@ -12,6 +12,9 @@ app.get('/about', (req,res) => {
     res.send('hello express about');
 })
 
+app.get('/about', (req,res) => {
+    res.send('hello express about');
+})
 
 
 app.listen(app.get('port'), () => {
