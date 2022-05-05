@@ -5,7 +5,7 @@ const app = express();
 
 app.set('port',process.env.PORT || 3000); //port 이름에 속성 3000부여
 
-app.use((req,res,next) => {
+app.use((req,res,next) => { //app.use 하위의 함수가 미들웨어 함수이다.
     console.log('모든 요청에 실행하고 싶어요 ');
     next();
 })
@@ -18,8 +18,12 @@ app.post('/',(req,res) => {
     res.send('hello express');
 });
 
+app.get('/category/nodejs', (req,res) => {
+    res.send('hello nodejs');
+})
+
 app.get('/category/:name',(req,res) => {
-    res.send(`hello ${req.params.name}`)
+    res.send(`hello ${req.params.name}`);
 }) //콜론뒤의 name을 value로 지정한다. 기본양식은 a : name 의 꼴이지만 key가 필요없기 때문 ?
 
 app.get('/about', (req,res) => {
