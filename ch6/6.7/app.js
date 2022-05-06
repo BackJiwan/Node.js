@@ -22,6 +22,7 @@ app.get('/category/nodejs', (req,res) => {
     res.send('hello nodejs');
 })
 
+
 app.get('/category/javascript', (req,res) => {
     res.send('hello javascript');
 })
