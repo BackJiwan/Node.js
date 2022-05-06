@@ -22,6 +22,10 @@ app.get('/category/nodejs', (req,res) => {
     res.send('hello nodejs');
 })
 
+app.get('/category/javascript', (req,res) => {
+    res.send('hello javascript');
+})
+
 app.get('/category/:name',(req,res) => {
     res.send(`hello ${req.params.name}`);
 }) //콜론뒤의 name을 value로 지정한다. 기본양식은 a : name 의 꼴이지만 key가 필요없기 때문 ?
@@ -29,6 +33,8 @@ app.get('/category/:name',(req,res) => {
 app.get('/about', (req,res) => {
     res.send('hello express about');
 })
+
+
 
 app.listen(app.get('port'), () => {
     console.log('익스프레스 서버가 실행됩니다. ');
