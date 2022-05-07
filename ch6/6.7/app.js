@@ -6,7 +6,7 @@ const app = express();
 app.set('port',process.env.PORT || 3000); //port 이름에 속성 3000부여
 
 app.use((req,res,next) => { //app.use 하위의 함수가 미들웨어 함수이다.
-    console.log('모든 요청에 실행하고 싶어요 ');
+    console.log('1. 요청에 실행하고 싶어요 ');
     next();
 })
 app.get('/' , (req,res) => {
@@ -35,7 +35,14 @@ app.get('/about', (req,res) => {
     res.send('hello express about');
 })
 
+app.use((req,res,next) => {
+    res.status(404).send('404 에러입니다. (404처리 미들웨어)');
+}) //다른 라우터들의 가장 아랫부분 + 에러처리 미들웨어의 윗부분
 
+app.use((err,req,res,next) => {
+    console.error(err)
+    res.status(404).send('에러가 났습니다. (에러처리 미들웨어)');
+})
 
 app.listen(app.get('port'), () => {
     console.log('익스프레스 서버가 실행됩니다. ');
