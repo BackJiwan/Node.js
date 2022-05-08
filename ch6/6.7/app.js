@@ -9,10 +9,17 @@ app.use((req,res,next) => { //app.use 하위의 함수가 미들웨어 함수이
     console.log('1. 요청에 실행하고 싶어요 ');
     next();
 })
-app.get('/' , (req,res) => {
+app.get('/' , (req,res,next) => {
     res.sendFile(path.join(__dirname, 'index.html'));
     //__dirname으로 현재 디렉토리의 경로를 모두 전달하고 그 뒤에 파일이름을 붙이는 형식으로 파일을 지정
+    next('route');
+},  (req,res) => {
+    console.log('실행되지 않는부분 ')
 }); //라우터 설정
+
+app.get('/',(req,res) => {
+    console.log('라우터 변경에 의한 실행지점 ');
+})
 
 app.post('/',(req,res) => {
     res.send('hello express');
