@@ -1,12 +1,15 @@
 const express = require('express');
 const path = require('path');
+const morgan = require('morgan');
 
 const app = express();
 
 app.set('port',process.env.PORT || 3000); //port 이름에 속성 3000부여
 
+app.use(morgan('dev'));
+
 app.use((req,res,next) => { //app.use 하위의 함수가 미들웨어 함수이다.
-    console.log('1. 요청에 실행하고 싶어요 ');
+    console.log('기본 미들웨어 이후 next 진행');
     next();
 })
 app.get('/' , (req,res,next) => {
@@ -18,7 +21,7 @@ app.get('/' , (req,res,next) => {
 }); //라우터 설정
 
 app.get('/',(req,res) => {
-    console.log('라우터 변경에 의한 실행지점 ');
+    console.log('get / 요청에 대해서 next(\'route\')로  넘어온 라우터');
 })
 
 app.post('/',(req,res) => {
@@ -52,6 +55,6 @@ app.use((err,req,res,next) => {
 })
 
 app.listen(app.get('port'), () => {
-    console.log('익스프레스 서버가 실행됩니다. ');
+    console.log('익스프레스 서버 최초 실행');
 });
 

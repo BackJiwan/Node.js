@@ -10,7 +10,10 @@
   "author": "JW",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1"
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
