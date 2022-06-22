@@ -54,7 +54,7 @@ app.use((err,req,res,next) => {
     res.status(404).send('에러가 났습니다. (에러처리 미들웨어)');
 })
 
-app.listen(app.get('port'), () => {
-    console.log('익스프레스 서버 최초 실행');
-});
+// app.listen(app.get('port'), () => {
+//     console.log('익스프레스 서버 최초 실행');
+// });
 
